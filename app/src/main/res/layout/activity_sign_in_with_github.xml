@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#f1f0f5"
+    android:background="#fefefe"
     android:gravity="center"
     tools:context=".SignInWithGithubActivity">
 
@@ -65,8 +65,9 @@
         <EditText
             android:id="@+id/usernameOrEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:ems="10"
+            android:background="@drawable/white_rounded_button"
             android:inputType="textEmailAddress"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -98,15 +99,16 @@
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPassword"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:background="@drawable/white_rounded_button"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/signInButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign In"

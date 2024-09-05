@@ -1,6 +1,8 @@
 package com.example.githubbrowser;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,11 @@ public class SignInWithGithubActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        Button signInWithGithubButton = findViewById(R.id.signInButton);
+        signInWithGithubButton.setOnClickListener(v -> {
+            Intent intent01 = new Intent(SignInWithGithubActivity.this, MainActivity.class);
+            startActivity(intent01);
         });
     }
 }
