@@ -34,16 +34,17 @@
         android:layout_gravity="center"
 
         >
+
         <Button
             android:id="@+id/signInWithGithubButton"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:background="@drawable/black_rounded_button"
-            android:textColor="@android:color/white"
             android:text="SIGN IN WITH GITHUB"
-            android:textSize="15dp">
-        </Button>
+            android:textColor="@android:color/white"
+            android:textSize="15dp"></Button>
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="10dp">
