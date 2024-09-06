@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".profile.FollowersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".StarredActivity"
             android:exported="false" />
         <activity
@@ -42,8 +48,9 @@
         <activity
             android:name=".SignInWithGithubActivity"
             android:exported="false" />
-        <activity android:name=".MainActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".ExploreActivity"
             android:exported="false" />

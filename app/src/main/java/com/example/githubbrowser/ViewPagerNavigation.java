@@ -6,6 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.githubbrowser.profile.ProfileFragment;
+
 public class ViewPagerNavigation extends FragmentStateAdapter {
 
 
@@ -20,6 +22,8 @@ public class ViewPagerNavigation extends FragmentStateAdapter {
        {
            case 0:
                return new HomeFragment();
+           case 3:
+                return new ProfileFragment();
            default:
                return new HomeFragment();
        }
