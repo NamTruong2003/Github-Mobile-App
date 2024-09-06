@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:gravity="bottom"
     tools:ignore="ExtraText">
 
     <androidx.viewpager2.widget.ViewPager2
@@ -19,11 +20,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/littleWhite"
+        android:background="@drawable/background_bottom_navigation"
         app:itemTextColor="@color/color_navigation"
         app:itemIconTint="@color/color_navigation"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/menu_navigation"/>
+        app:menu="@menu/menu_navigation"
+        android:elevation="10dp"
+       />
     />
 
 </RelativeLayout>
