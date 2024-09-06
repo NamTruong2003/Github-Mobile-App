@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchingActivity"
+    tools:context=".homepage.SearchingActivity"
     android:orientation="vertical"
     android:background="@color/white">
 
@@ -50,6 +50,7 @@
             android:layout_centerInParent="true"
             android:textSize="32dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             >
         </TextView>
         <Space
@@ -69,6 +70,7 @@
             android:gravity="center"
             android:layout_below="@+id/Space_1"
             android:layout_centerInParent="true"
+            android:textColor="@color/black"
             >
 
         </TextView>

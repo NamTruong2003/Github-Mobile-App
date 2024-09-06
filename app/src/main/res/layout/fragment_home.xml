@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".HomeFragment">
+    tools:context=".homepage.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -363,7 +363,7 @@
                 android:background="@color/black"></View>
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView"
-                android:name="com.example.githubbrowser.Favorites_home_fragment"
+                android:name="com.example.githubbrowser.homepage.Favorites_home_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 />
@@ -377,7 +377,7 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView2"
-                android:name="com.example.githubbrowser.ShortcustFragment"
+                android:name="com.example.githubbrowser.homepage.ShortcustFragment"
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />
             <View

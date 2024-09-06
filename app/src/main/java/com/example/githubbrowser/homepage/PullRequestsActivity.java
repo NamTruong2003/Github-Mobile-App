@@ -1,14 +1,12 @@
-package com.example.githubbrowser;
+package com.example.githubbrowser.homepage;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,36 +14,36 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class IssueActivity extends AppCompatActivity {
+import com.example.githubbrowser.R;
 
+public class PullRequestsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_issue);
+        setContentView(R.layout.activity_pull_requests);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ImageButton searchButton = findViewById(R.id.search_button_issue);
-        ImageButton backButton = findViewById(R.id.backButton_issue);
-        TextView textView = findViewById(R.id.text_issue);
-        EditText editText = findViewById(R.id.edit_text_issue);
-
+        ImageButton searchButton = findViewById(R.id.search_button_pull_requests);
+        ImageButton backButton = findViewById(R.id.backButton_pull_requests);
+        TextView textView = findViewById(R.id.text_pull_requests);
+        EditText editText = findViewById(R.id.edit_text_pull_requests);
         searchButton.setOnClickListener(view -> {
             editText.setVisibility(View.VISIBLE); // Show the EditText
             textView.setVisibility(View.GONE); // Hide the Search button
             editText.getText();
         });
         backButton.setOnClickListener(view -> onBackPressed());
-        Spinner spinner1 = findViewById(R.id.open_menu);
-        Spinner spinner2 = findViewById(R.id.Created_menu);
-        Spinner spinner3 = findViewById(R.id.visibility_menu);
-        Spinner spinner4 = findViewById(R.id.organization_menu);
-        Spinner spinner5 = findViewById(R.id.Repository_menu);
-        Spinner spinner6 = findViewById(R.id.Sort_menu);
+        Spinner spinner1 = findViewById(R.id.open_menu_pull_quests);
+        Spinner spinner2 = findViewById(R.id.Created_menu_pull_requests);
+        Spinner spinner3 = findViewById(R.id.visibility_menu_pull_request);
+        Spinner spinner4 = findViewById(R.id.organization_menu_pull_requests);
+        Spinner spinner5 = findViewById(R.id.Repository_menu_pull_requests);
+        Spinner spinner6 = findViewById(R.id.Sort_menu_pull_requests);
 
         String[] items1 = {"Open", "Closed", "All"};
         String[] items2 = {"Created by me", "Assigned to me", "Mentions me", "Involved"};
@@ -74,10 +72,7 @@ public class IssueActivity extends AppCompatActivity {
         spinner4.setAdapter(adapter4);
         spinner5.setAdapter(adapter5);
         spinner6.setAdapter(adapter6);
-
     }
-
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();

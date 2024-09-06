@@ -27,6 +27,6 @@
         app:menu="@menu/menu_navigation"
         android:elevation="10dp"
        />
-    />
+
 
 </RelativeLayout>

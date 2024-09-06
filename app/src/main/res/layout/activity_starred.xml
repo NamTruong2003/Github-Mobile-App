@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StarredActivity"
+    tools:context=".homepage.StarredActivity"
     android:orientation="vertical"
     android:background="@color/white">
     <LinearLayout
@@ -72,9 +72,9 @@
         <ImageView
             android:id="@+id/image_starred"
             android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/image_github">
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/github_image">
         </ImageView>
 
         <TextView
@@ -85,6 +85,7 @@
             android:text="Nothing starred yet"
             android:textSize="30dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_below="@+id/image_starred"
             ></TextView>
         <TextView

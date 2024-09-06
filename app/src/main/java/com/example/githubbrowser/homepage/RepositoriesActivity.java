@@ -1,9 +1,11 @@
-package com.example.githubbrowser;
+package com.example.githubbrowser.homepage;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -12,28 +14,32 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class StarredActivity extends AppCompatActivity {
+import com.example.githubbrowser.R;
+
+public class RepositoriesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_starred);
+        setContentView(R.layout.activity_repositories);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ImageButton searchButton = findViewById(R.id.search_button_starred);
-        ImageButton backButton = findViewById(R.id.backButton_starred);
-        TextView textView = findViewById(R.id.text_starred);
-        EditText editText = findViewById(R.id.edit_text_starred);
-        searchButton.setOnClickListener(view -> {
-            editText.setVisibility(View.VISIBLE); // Show the EditText
-            textView.setVisibility(View.GONE); // Hide the Search button
-            editText.getText();
-        });
+
+        ImageButton backButton = findViewById(R.id.backButton_repositories);
         backButton.setOnClickListener(view -> onBackPressed());
+        Spinner spinner1 = findViewById(R.id.open_menu_repositories);
+
+        String[] items1 = {"All", "Archived", "Fork","Mirror", "Private", "Public", "Source", "Template"};
+
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items1);
+
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_item);
+
+        spinner1.setAdapter(adapter1);
     }
     @Override
     public void onBackPressed() {

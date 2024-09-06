@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.githubbrowser.homepage.HomeFragment;
 import com.example.githubbrowser.profile.ProfileFragment;
 
 public class ViewPagerNavigation extends FragmentStateAdapter {

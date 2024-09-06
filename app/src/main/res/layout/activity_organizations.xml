@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrganizationsActivity"
+    tools:context=".homepage.OrganizationsActivity"
     android:orientation="vertical"
     android:background="@color/white">
     <LinearLayout
@@ -55,6 +55,7 @@
             android:text="There aren't any Organizations."
             android:textSize="26dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             ></TextView>
     </RelativeLayout>
 </LinearLayout>

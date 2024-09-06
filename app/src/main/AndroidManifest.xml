@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/github_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/github_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
@@ -19,31 +19,31 @@
             android:name=".profile.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".StarredActivity"
+            android:name=".homepage.StarredActivity"
             android:exported="false" />
         <activity
-            android:name=".SearchingActivity"
+            android:name=".homepage.SearchingActivity"
             android:exported="false" />
         <activity
-            android:name=".RepositoriesActivity"
+            android:name=".homepage.RepositoriesActivity"
             android:exported="false" />
         <activity
-            android:name=".PullRequestsActivity"
+            android:name=".homepage.PullRequestsActivity"
             android:exported="false" />
         <activity
-            android:name=".ProjectActivity"
+            android:name=".homepage.ProjectActivity"
             android:exported="false" />
         <activity
-            android:name=".OrganizationsActivity"
+            android:name=".homepage.OrganizationsActivity"
             android:exported="false" />
         <activity
-            android:name=".IssueActivity"
+            android:name=".homepage.IssueActivity"
             android:exported="false" />
         <activity
-            android:name=".DiscussionsActivity"
+            android:name=".homepage.DiscussionsActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateIssueActivity"
+            android:name=".homepage.CreateIssueActivity"
             android:exported="false" />
         <activity
             android:name=".SignInWithGithubActivity"

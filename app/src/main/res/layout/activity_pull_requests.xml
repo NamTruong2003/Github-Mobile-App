@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PullRequestsActivity"
+    tools:context=".homepage.PullRequestsActivity"
     android:orientation="vertical"
     android:background="@color/white">
     <LinearLayout
@@ -158,18 +158,19 @@
         <ImageView
             android:id="@+id/image_pull_requests"
             android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/image_github">
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/github_image">
         </ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="There aren't any issues"
+            android:text="There aren't any pull requests"
             android:textSize="30dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_below="@+id/image_pull_requests"
             ></TextView>
     </RelativeLayout>

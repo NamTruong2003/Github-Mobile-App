@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Favorites_home_fragment">
+    tools:context=".homepage.Favorites_home_fragment">
 
     <TextView
         android:id="@+id/favorites_text"
@@ -22,6 +22,7 @@
         android:text="Add favorites repositories for quick access at any time, without having to search"
         android:layout_centerInParent="true"
         android:gravity="center"
+        android:textColor="@color/black"
         android:textSize="16dp"></TextView>
     <Space
         android:id="@+id/space_text"

@@ -1,4 +1,4 @@
-package com.example.githubbrowser;
+package com.example.githubbrowser.homepage;
 
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.githubbrowser.R;
 
 public class ProjectActivity extends AppCompatActivity {
 
