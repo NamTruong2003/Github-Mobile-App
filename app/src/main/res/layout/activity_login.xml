@@ -43,7 +43,7 @@
             android:background="@drawable/black_rounded_button"
             android:text="SIGN IN WITH GITHUB"
             android:textColor="@android:color/white"
-            android:textSize="15dp"></Button>
+            android:textSize="15dp"/>
 
         <Space
             android:layout_width="match_parent"
