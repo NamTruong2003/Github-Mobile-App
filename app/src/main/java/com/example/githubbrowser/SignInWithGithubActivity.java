@@ -22,15 +22,9 @@ public class SignInWithGithubActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-<<<<<<< HEAD
         Button signInWithGithubButton = findViewById(R.id.signInButton);
         signInWithGithubButton.setOnClickListener(v -> {
             Intent intent01 = new Intent(SignInWithGithubActivity.this, MainActivity.class);
-=======
-        Button signInWithGithubButton = findViewById(R.id.sign_in);
-        signInWithGithubButton.setOnClickListener(v -> {
-            Intent intent01 = new Intent(SignInWithGithubActivity.this, ExploreActivity.class);
->>>>>>> d99fa10b40bba0c2f8146cb90d55841649cb5df5
             startActivity(intent01);
         });
     }

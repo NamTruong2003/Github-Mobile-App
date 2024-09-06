@@ -108,11 +108,7 @@
             android:background="@drawable/white_rounded_button"/>
 
         <Button
-<<<<<<< HEAD
             android:id="@+id/signInButton"
-=======
-            android:id="@+id/sign_in"
->>>>>>> d99fa10b40bba0c2f8146cb90d55841649cb5df5
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign In"
