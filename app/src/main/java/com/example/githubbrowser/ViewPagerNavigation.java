@@ -23,6 +23,8 @@ public class ViewPagerNavigation extends FragmentStateAdapter {
        {
            case 0:
                return new HomeFragment();
+           case 2:
+               return new ExploreFragment();
            case 3:
                 return new ProfileFragment();
            default:

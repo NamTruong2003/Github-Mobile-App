@@ -45,7 +45,9 @@ public class AwesomeLists extends Fragment {
         list_toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requireActivity().onBackPressed();
+                if(getActivity()!=null){
+                    getActivity().getSupportFragmentManager().popBackStack();
+                }
             }
         });
 

@@ -7,11 +7,13 @@
     tools:context=".AwesomeLists">
 
     <!-- TODO: Update blank fragment layout -->
-    <include
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/xml_toolbar_list"
-        layout="@layout/title_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp"
+        android:background="@color/white"
+        />
+
 
     <ScrollView
         android:id="@+id/main"

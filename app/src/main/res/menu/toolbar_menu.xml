@@ -4,7 +4,7 @@
     <item
         android:title="Back"
         android:id="@+id/backButton"
-        android:icon="@drawable/baseline_keyboard_backspace_24"
+
         app:showAsAction="always">
     </item>
 

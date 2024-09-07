@@ -16,7 +16,14 @@ import androidx.fragment.app.Fragment;
 import java.util.Objects;
 
 public class Trending extends Fragment {
+    public Trending(){
 
+    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trending, container, false);
@@ -39,7 +46,9 @@ public class Trending extends Fragment {
         trending_toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requireActivity().onBackPressed();
+                if(getActivity()!=null){
+                    getActivity().getSupportFragmentManager().popBackStack();
+                }
             }
         });
 

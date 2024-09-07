@@ -6,11 +6,6 @@
     android:layout_height="match_parent">
 
 
-    <include
-        android:id="@+id/xml_title_bar"
-        layout="@layout/title_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 
     <ScrollView
@@ -400,8 +395,7 @@
                         android:inputType="textMultiLine"
                         android:text="Awesome list about all kinds of interesting topics"
                         android:textSize="16sp" />
-
-                    <TextView
+w
                         android:id="@+id/text14"
                         android:layout_width="match_parent"
                         android:textColor="@color/dark_text_color"
