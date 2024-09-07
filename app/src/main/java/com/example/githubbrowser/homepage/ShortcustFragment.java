@@ -1,5 +1,6 @@
 package com.example.githubbrowser.homepage;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.githubbrowser.R;
 
@@ -61,6 +63,15 @@ public class ShortcustFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shortcust, container, false);
+       View view = inflater.inflate(R.layout.fragment_shortcust, container, false);
+        ImageButton imageButton = view.findViewById(R.id.button_get_started);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireContext(), Shortcut_Activity.class);
+                startActivity(intent);
+            }
+        });
+       return view;
     }
 }

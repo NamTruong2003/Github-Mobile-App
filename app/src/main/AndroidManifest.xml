@@ -54,6 +54,10 @@
         <activity
             android:name=".ExploreActivity"
             android:exported="false" />
+        <activity android:name=".homepage.Favorites_Activity"
+            android:exported="false"/>
+        <activity android:name=".homepage.Shortcut_Activity"
+            android:exported="false"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true">

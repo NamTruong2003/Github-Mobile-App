@@ -11,17 +11,17 @@
     <LinearLayout
         android:id="@+id/layout_create_issue"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="55dp"
         android:orientation="horizontal"
         android:background="@color/white"
         >
         <ImageButton
             android:id="@+id/backButton_create_issue"
-            android:layout_width="40dp"
+            android:layout_width="55dp"
             android:layout_height="match_parent"
-            app:srcCompat = "@drawable/baseline_keyboard_backspace_24"
-            android:background="@drawable/button_selector"
+            android:src="@drawable/baseline_keyboard_backspace_24"
             android:contentDescription="Back"
+            android:background="@color/white"
             ></ImageButton>
 
         <Space
@@ -32,50 +32,55 @@
 
         <LinearLayout
             android:id="@+id/layout_text_create_issue"
-            android:layout_width="288dp"
+            android:layout_width="270dp"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/white">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Create Issue"
-                android:textSize="10dp"
+                android:textColor="@color/black"
+                android:textSize="16dp"
                 ></TextView>
             <TextView
                 android:id="@+id/text_create_issue"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Choose a repository"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:background="@color/white"></TextView>
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold">
+            </TextView>
 
         </LinearLayout>
 
         <EditText
             android:id="@+id/edit_text_create_issue"
             android:layout_width="290dp"
-            android:layout_height="40dp"
+            android:layout_height="55dp"
             android:hint="Search Issues"
+            android:textColorHint="@color/Gray"
             android:visibility="gone"
             ></EditText>
+
         <Space
-            android:layout_width="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/white">
-        </Space>
+            android:background="@color/white"></Space>
         <ImageButton
             android:id="@+id/search_button_create_issue"
-            android:layout_width="40dp"
+            android:layout_width="55dp"
             android:layout_height="match_parent"
-            app:srcCompat = "@drawable/baseline_search_24"
-            android:background="@drawable/button_selector"
+            app:srcCompat = "@drawable/baseline_search_24_blue"
+            android:background="@color/white"
             >
         </ImageButton>
         <Space
-            android:layout_width="10dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"></Space>
     </LinearLayout>
+
 
 </LinearLayout>
