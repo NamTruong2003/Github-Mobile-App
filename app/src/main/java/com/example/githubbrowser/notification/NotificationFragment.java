@@ -8,55 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioGroup;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.example.githubbrowser.R;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link NotificationFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class NotificationFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public NotificationFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment NotificationFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static NotificationFragment newInstance(String param1, String param2) {
-        NotificationFragment fragment = new NotificationFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    private Button button1;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -64,21 +28,35 @@ public class NotificationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notification, container, false);
+        button1 = view.findViewById(R.id.button_inbox_notification);
 
-        Button button = view.findViewById(R.id.button_inbox_notification);
-        button.setOnClickListener(new View.OnClickListener() {
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 clickOpenBottomSheet();
             }
         });
+
         return view;
     }
-    private void clickOpenBottomSheet()
-    {
-        View view = getLayoutInflater().inflate(R.layout.layout_bottom_sheet, null);
+    public void updateButtonText(String newText){
+        button1.setText(newText);
+    }
+    private void clickOpenBottomSheet() {
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.layout_bottom_sheet, null);
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
-        bottomSheetDialog.setContentView(view);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RadioGroup radioGroup = bottomSheetView.findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton = bottomSheetView.findViewById(checkedId);
+                String selectedText = radioButton.getText().toString();
+                updateButtonText(selectedText);
+            }
+        });
+
         bottomSheetDialog.show();
     }
 }

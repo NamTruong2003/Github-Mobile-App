@@ -19,14 +19,16 @@
         </Button>
         <Space
             android:layout_width="20dp"
-            android:layout_height="match_parent"></Space>
+            android:layout_height="match_parent">
+
+        </Space>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="Filter notifications by "
-            android:textSize="26dp"
+            android:textSize="26sp"
             android:textStyle="bold">
         </TextView>
 
@@ -41,6 +43,7 @@
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
         android:orientation="vertical">
     <RadioButton
         android:id="@+id/text_inbox_notifications"
@@ -52,10 +55,14 @@
         android:textSize="26dp"
         android:checked="true"
         android:layoutDirection="rtl"
-        android:button="@drawable/tick_icon_bottom_sheet"></RadioButton>
+        android:button="@drawable/tick_icon_bottom_sheet">
+
+    </RadioButton>
     <Space
         android:layout_width="match_parent"
-        android:layout_height="10dp"></Space>
+        android:layout_height="10dp">
+
+    </Space>
     <RadioButton
         android:id="@+id/text_saved_notifications"
         android:layout_width="match_parent"
@@ -65,7 +72,9 @@
         android:textSize="26dp"
         android:layoutDirection="rtl"
         android:button="@drawable/tick_icon_bottom_sheet"
-        android:paddingLeft="10dp"></RadioButton>
+        android:paddingLeft="10dp">
+
+    </RadioButton>
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"></Space>
