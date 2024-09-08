@@ -107,7 +107,9 @@
                 android:layout_height="30dp"
                 android:text="Assigned"
                 android:textColor="@color/black"
-                android:textSize="26dp"></CheckBox>
+                android:textSize="26dp"
+               
+                ></CheckBox>
 
         </LinearLayout>
 
