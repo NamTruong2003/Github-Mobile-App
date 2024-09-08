@@ -7,6 +7,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.githubbrowser.homepage.HomeFragment;
+import com.example.githubbrowser.notification.NotificationFragment;
 import com.example.githubbrowser.profile.ProfileFragment;
 
 public class ViewPagerNavigation extends FragmentStateAdapter {
@@ -23,6 +24,8 @@ public class ViewPagerNavigation extends FragmentStateAdapter {
        {
            case 0:
                return new HomeFragment();
+           case 1:
+               return new NotificationFragment();
            case 2:
                return new ExploreFragment();
            case 3:
