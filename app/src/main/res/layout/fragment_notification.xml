@@ -26,20 +26,27 @@
         <Button
             android:id="@+id/button_inbox_notification"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:layout_height="30dp"
+            android:background="@drawable/background_notification_button"
             android:text="Inbox"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textAllCaps="false"
             android:textStyle="normal"/>
         <Space
             android:layout_width="10dp"
             android:layout_height="match_parent"/>
 
-        <Button
+        <ToggleButton
             android:id="@+id/button_Unread_notification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:textOn="Unread"
+            android:textOff="Unread"
+            android:textAllCaps="false"
+            android:background="@drawable/background_undread_notification"
+            android:checked="false"
+            android:textStyle="normal"
+            />
         <Space
             android:layout_width="10dp"
             android:layout_height="match_parent"/>
@@ -48,7 +55,12 @@
         <Button
             android:id="@+id/button_Repository_notification"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="30dp"
+            android:background="@drawable/background_notification_button"
+            android:text="Repository"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="normal"/>
         <Space
             android:layout_width="10dp"
             android:layout_height="match_parent"/>
@@ -80,12 +92,25 @@
             android:textStyle="bold"
             android:layout_centerInParent="true"
             android:layout_below="@+id/space_notification_image"/>
+        <TextView
+            android:id="@+id/text_unread_on_after_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No notifications"
+            android:textColor="@color/black"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/space_notification_image"
+            android:visibility="gone"/>
+
         <Space
             android:id="@+id/space_notification_text"
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_below="@+id/text_notification_after_image"/>
         <TextView
+            android:id="@+id/text_long_notification"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:text="Take a break, write some code, and do what you do best."
@@ -94,6 +119,22 @@
             android:layout_centerInParent="true"
             android:layout_below="@+id/space_notification_text"
             android:gravity="center"/>
+        <Space
+            android:id="@+id/space_unread_on"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/text_unread_on_after_image"/>
+        <TextView
+            android:id="@+id/text_unread_on"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Use fewer filters or reset all filters"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/space_unread_on"
+            android:gravity="center"
+            android:visibility="gone"/>
     </RelativeLayout>
   
 
