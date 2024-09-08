@@ -8,13 +8,15 @@
     android:background="@color/white">
     
     <TextView
-        android:paddingLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Notifications"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="30dp"></TextView>
+        android:textSize="30sp">
+
+    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +26,12 @@
         <Button
             android:id="@+id/button_inbox_notification"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="Inbox"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:textStyle="normal"/>
         <Space
             android:layout_width="10dp"
             android:layout_height="match_parent"/>
