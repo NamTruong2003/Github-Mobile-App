@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".profile.TrophyActivity"
+            android:exported="false" />
+        <activity
             android:name=".profile.FollowersActivity"
             android:exported="false" />
         <activity
