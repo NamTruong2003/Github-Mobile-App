@@ -49,7 +49,8 @@
             android:hint=" Set your status"
             android:paddingHorizontal="10dp"
             android:paddingVertical="10dp"
-            android:textColorHint="#848a86"></EditText>
+            android:textColorHint="#848a86">
+        </EditText>
 
         <Space
             android:layout_width="1dp"
@@ -88,7 +89,8 @@
             <ListView
                 android:id="@+id/functionListView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:listSelector="@color/Bule">
             </ListView>
         </androidx.cardview.widget.CardView>
 
