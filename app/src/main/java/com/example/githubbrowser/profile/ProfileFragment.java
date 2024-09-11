@@ -91,11 +91,13 @@ public class ProfileFragment extends Fragment {
                             requireContext(), OrganizationActivity.class
                     );
                     startActivity(intent);
+                    break;
                 case 3:
                     intent = new Intent(
                             requireContext(), ProjectsActivity.class
                     );
                     startActivity(intent);
+                    break;
             }
         });
 
