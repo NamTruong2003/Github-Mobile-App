@@ -97,7 +97,8 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/issues"
                     android:background="@drawable/background_issue_icon"
-                    app:tint="@color/white">
+                    app:tint="@color/white"
+                    android:padding="2.5dp">
 
                 </ImageView>
 
@@ -136,7 +137,8 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/pull_request"
                     android:background="@drawable/background_pull_request_icon"
-                    app:tint="@color/white">
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -175,7 +177,8 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/discussion"
                     android:background="@drawable/background_discussion_icon"
-                    app:tint="@color/white">
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -214,7 +217,8 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/project_icon"
                     android:background="@drawable/background_project_icon"
-                    app:tint="@color/white">
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -253,7 +257,8 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/repository"
                     android:background="@drawable/background_repositories_icon"
-                    app:tint="@color/white">
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -292,7 +297,8 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/orgisation"
                     android:background="@drawable/background_organizations_icon"
-                    app:tint="@color/white">
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -331,7 +337,8 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/star"
                     android:background="@drawable/background_starred_icon"
-                    app:tint="@color/white">
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
