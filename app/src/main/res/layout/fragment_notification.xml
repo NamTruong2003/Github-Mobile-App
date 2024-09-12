@@ -6,7 +6,7 @@
     tools:context=".notification.NotificationFragment"
     android:orientation="vertical"
     android:background="@color/white">
-    
+
     <TextView
         android:layout_marginStart="10dp"
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        
+
         <Button
             android:id="@+id/button_inbox_notification"
             android:layout_width="wrap_content"
@@ -65,12 +65,12 @@
             android:layout_width="10dp"
             android:layout_height="match_parent"/>
     </LinearLayout>
-    
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/Theme">
-        
+
         <ImageView
             android:id="@+id/image_notification"
             android:layout_width="wrap_content"
@@ -103,7 +103,6 @@
             android:layout_centerInParent="true"
             android:layout_below="@+id/space_notification_image"
             android:visibility="gone"/>
-
         <Space
             android:id="@+id/space_notification_text"
             android:layout_width="match_parent"
@@ -135,7 +134,26 @@
             android:layout_below="@+id/space_unread_on"
             android:gravity="center"
             android:visibility="gone"/>
+        <Space
+            android:id="@+id/button_under_read"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/text_notification_after_image"/>
+
+        <Button
+            android:id="@+id/btnResetFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="560dp"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="#FFFFFF"
+            android:text="RESET ALL FILTERS"
+            android:textColor="@android:color/holo_blue_dark"
+            android:visibility="gone"/>
+
     </RelativeLayout>
-  
+
+
+
 
 </LinearLayout>
