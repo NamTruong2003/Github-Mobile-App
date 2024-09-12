@@ -14,7 +14,7 @@
         android:text="Notifications"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="30sp">
+        android:textSize="26sp">
 
     </TextView>
 
@@ -28,10 +28,11 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@drawable/background_notification_button"
-            android:text="Inbox"
+            android:text="  Inbox"
             android:textColor="@color/white"
             android:textAllCaps="false"
-            android:textStyle="normal"/>
+            android:textStyle="normal"
+            android:drawableEnd="@drawable/baseline_arrow_drop_down_24"/>
         <Space
             android:layout_width="10dp"
             android:layout_height="match_parent"/>
@@ -57,10 +58,11 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@drawable/background_notification_button"
-            android:text="Repository"
+            android:text="   Repository"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textStyle="normal"/>
+            android:textStyle="normal"
+            android:drawableEnd="@drawable/baseline_arrow_drop_down_24"/>
         <Space
             android:layout_width="10dp"
             android:layout_height="match_parent"/>
@@ -76,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:src="@drawable/image_notifications_github"
-            android:layout_centerInParent="true"/>
+            android:layout_marginTop="175dp"/>
         <Space
             android:id="@+id/space_notification_image"
             android:layout_width="match_parent"
@@ -144,7 +146,7 @@
             android:id="@+id/btnResetFilters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="560dp"
+            android:layout_margin="460dp"
             android:layout_centerHorizontal="true"
             android:backgroundTint="#FFFFFF"
             android:text="RESET ALL FILTERS"
