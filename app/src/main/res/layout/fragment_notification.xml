@@ -136,17 +136,18 @@
             android:layout_below="@+id/space_unread_on"
             android:gravity="center"
             android:visibility="gone"/>
+
         <Space
-            android:id="@+id/button_under_read"
+            android:id="@+id/space_below_text"
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:layout_below="@+id/text_notification_after_image"/>
+            android:layout_below="@id/text_unread_on" />
 
         <Button
             android:id="@+id/btnResetFilters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="460dp"
+            android:layout_below="@id/space_below_text"
             android:layout_centerHorizontal="true"
             android:backgroundTint="#FFFFFF"
             android:text="RESET ALL FILTERS"
