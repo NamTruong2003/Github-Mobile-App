@@ -241,9 +241,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
+
             <LinearLayout
                 android:id="@+id/repositories"
                 android:layout_width="match_parent"
@@ -311,8 +313,8 @@
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:text="Organizations"
-                    android:textSize="18dp"
-                    android:textColor="@color/black">
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
 
                 </TextView>
 
@@ -321,22 +323,24 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
+
             <LinearLayout
                 android:id="@+id/Starrted"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:orientation="horizontal"
                 android:background="@drawable/button_selector"
-                android:onClick="onButtonClick">
+                android:onClick="onButtonClick"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/star"
                     android:background="@drawable/background_starred_icon"
+                    android:src="@drawable/star"
                     app:tint="@color/white"
                     android:padding="5dp">
 
@@ -351,8 +355,8 @@
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:text="Starred"
-                    android:textSize="18dp"
-                    android:textColor="@color/black">
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
 
                 </TextView>
 
@@ -361,23 +365,27 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
                 android:background="@color/black"></View>
+
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView"
                 android:name="com.example.githubbrowser.homepage.Favorites_home_fragment"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                />
+                android:layout_height="200dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
                 android:background="@color/black"></View>
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp"></Space>
@@ -387,6 +395,7 @@
                 android:name="com.example.githubbrowser.homepage.ShortcustFragment"
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"

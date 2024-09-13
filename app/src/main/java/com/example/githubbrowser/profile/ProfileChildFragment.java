@@ -3,6 +3,7 @@ package com.example.githubbrowser.profile;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.githubbrowser.R;
+import com.example.githubbrowser.homepage.Shortcut_Activity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +21,7 @@ import com.example.githubbrowser.R;
  * create an instance of this fragment.
  */
 public class ProfileChildFragment extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,6 +68,7 @@ public class ProfileChildFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_child, container, false);
+        View view =  inflater.inflate(R.layout.fragment_profile_child, container, false);
+        return view;
     }
 }
