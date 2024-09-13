@@ -157,7 +157,7 @@
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button3"
                         android:layout_width="match_parent"
                         android:textColor="@color/dark_text_color"
                         android:layout_height="wrap_content"
@@ -167,6 +167,10 @@
                         android:elevation="2dp"
                         android:background="@drawable/white_rounded_button"
                         android:text="@string/star" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
             <Space
@@ -221,16 +225,20 @@
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button4"
                         android:layout_width="match_parent"
                         android:textColor="@color/dark_text_color"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
-                        android:layout_weight="1"
-                        android:background="@color/white"
-                        android:elevation="10dp"
+                        android:layout_weight="0"
+                        android:elevation="2dp"
+                        android:background="@drawable/white_rounded_button"
                         android:text="@string/star" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
             <Space
@@ -285,21 +293,27 @@
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button9"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:textColor="@color/dark_text_color"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
                         android:layout_weight="0"
-                        android:background="@color/white"
                         android:elevation="2dp"
+                        android:background="@drawable/white_rounded_button"
                         android:text="@string/star" />
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -349,16 +363,21 @@
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button6"
                         android:layout_width="match_parent"
+                        android:textColor="@color/dark_text_color"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
-                        android:textColor="@color/dark_text_color"
                         android:layout_marginRight="18dp"
                         android:layout_weight="0"
-                        android:background="@color/white"
                         android:elevation="2dp"
+                        android:background="@drawable/white_rounded_button"
                         android:text="@string/star" />
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
             <Space
@@ -395,13 +414,7 @@
                         android:inputType="textMultiLine"
                         android:text="Awesome list about all kinds of interesting topics"
                         android:textSize="16sp" />
-w
-                        android:id="@+id/text14"
-                        android:layout_width="match_parent"
-                        android:textColor="@color/dark_text_color"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="18dp"
-                        android:text="332,7k" />
+
 
                     <TextView
                         android:id="@+id/text15"
@@ -412,16 +425,21 @@ w
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button7"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:textColor="@color/dark_text_color"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
                         android:layout_weight="0"
-                        android:background="@color/white"
                         android:elevation="2dp"
+                        android:background="@drawable/white_rounded_button"
                         android:text="@string/star" />
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
             <Space
@@ -476,16 +494,20 @@ w
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button8"
                         android:layout_width="match_parent"
                         android:textColor="@color/dark_text_color"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
                         android:layout_weight="0"
-                        android:background="@color/white"
-                        android:elevation="5dp"
+                        android:elevation="2dp"
+                        android:background="@drawable/white_rounded_button"
                         android:text="@string/star" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

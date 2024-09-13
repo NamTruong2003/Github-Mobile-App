@@ -3,6 +3,7 @@ package com.example.githubbrowser.profile;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.githubbrowser.R;
+import com.example.githubbrowser.homepage.PullRequestsActivity;
 
 public class ProfileFragment extends Fragment {
 
@@ -26,7 +28,31 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        CardView Card1 = view.findViewById(R.id.Card1);
+        CardView Card3 = view.findViewById(R.id.Card3);
+        CardView Card2 = view.findViewById(R.id.Card2);
 
+        Card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_card1 = new Intent(requireContext(), Card1_.class);
+                startActivity(intent_card1);
+            }
+        });
+        Card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_card2 = new Intent(requireContext(), Card2_.class);
+                startActivity(intent_card2);
+            }
+        });
+        Card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_card3 = new Intent(requireContext(), Card3_.class);
+                startActivity(intent_card3);
+            }
+        });
         // setting up setting button
         ImageButton settingButton = view.findViewById(R.id.settingButton);
         if(settingButton != null){

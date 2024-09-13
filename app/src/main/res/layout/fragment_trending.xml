@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".Trending" >
 
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="                        android:layout_width=&quot;match_parent&quot;&#xA;                        android:layout_height=&quot;wrap_content&quot;&#xA;                        android:layout_marginLeft=&quot;18dp&quot;&#xA;                        android:layout_marginRight=&quot;18dp&quot;&#xA;                        android:layout_weight=&quot;0&quot;&#xA;                        android:background=&quot;@drawable/white_rounded_button&quot;&#xA;                        android:elevation=&quot;2dp&quot;&#xA;                        android:text=&quot;@string/star&quot;&#xA;                        android:textColor=&quot;@color/dark_text_color&quot; />" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/xml_toolbar_trending"
         android:layout_width="match_parent"
@@ -74,16 +80,20 @@
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
                         android:layout_weight="0"
                         android:background="@drawable/white_rounded_button"
-                        android:elevation="2dp"
+                        android:elevation="4dp"
                         android:text="@string/star"
                         android:textColor="@color/dark_text_color" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -140,16 +150,20 @@
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
                         android:layout_weight="0"
                         android:background="@drawable/white_rounded_button"
-                        android:elevation="2dp"
+                        android:elevation="4dp"
                         android:text="@string/star"
                         android:textColor="@color/dark_text_color" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -205,16 +219,20 @@
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
                         android:layout_weight="0"
                         android:background="@drawable/white_rounded_button"
-                        android:elevation="2dp"
+                        android:elevation="4dp"
                         android:text="@string/star"
                         android:textColor="@color/dark_text_color" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -230,6 +248,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
 
                     <TextView
                         android:id="@+id/text13"
@@ -270,16 +292,20 @@
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
                         android:layout_weight="0"
                         android:background="@drawable/white_rounded_button"
-                        android:elevation="2dp"
+                        android:elevation="4dp"
                         android:text="@string/star"
                         android:textColor="@color/dark_text_color" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -335,16 +361,20 @@
                         android:text="590 contributor" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/button5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
                         android:layout_weight="0"
                         android:background="@drawable/white_rounded_button"
-                        android:elevation="2dp"
+                        android:elevation="4dp"
                         android:text="@string/star"
                         android:textColor="@color/dark_text_color" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -410,6 +440,14 @@
                         android:elevation="2dp"
                         android:text="@string/star"
                         android:textColor="@color/dark_text_color" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
