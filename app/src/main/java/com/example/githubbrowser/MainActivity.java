@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
              }
             }
-
             @Override
             public void onPageScrollStateChanged(int state) {
                 super.onPageScrollStateChanged(state);
@@ -65,19 +64,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.menu_tab_1) {
-                    mviewPager.setCurrentItem(0, true); // Switch to the first fragment
+                    mviewPager.setCurrentItem(0, true);
                     return true;
                 }
                 if (item.getItemId() == R.id.menu_tab_2) {
-                    mviewPager.setCurrentItem(1, true); // Switch to the first fragment
+                    mviewPager.setCurrentItem(1, true);
                     return true;
                 }
                 if (item.getItemId() == R.id.menu_tab_3) {
-                    mviewPager.setCurrentItem(2, true); // Switch to the first fragment
+                    mviewPager.setCurrentItem(2, true);
                     return true;
                 }
                 if (item.getItemId() == R.id.menu_tab_4) {
-                    mviewPager.setCurrentItem(3, true); // Switch to the first fragment
+                    mviewPager.setCurrentItem(3, true);
                     return true;
                 }
                 return false;

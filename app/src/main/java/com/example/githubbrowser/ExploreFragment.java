@@ -16,13 +16,9 @@ import android.widget.Button;
 
 public class ExploreFragment extends Fragment {
 
-
-
     public ExploreFragment() {
         // Required empty public constructor
     }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

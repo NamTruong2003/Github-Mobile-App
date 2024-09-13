@@ -12,11 +12,9 @@ import com.example.githubbrowser.profile.ProfileFragment;
 
 public class ViewPagerNavigation extends FragmentStateAdapter {
 
-
     public ViewPagerNavigation(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
-
     @NonNull
     @Override
     public Fragment createFragment(int position) {

@@ -4,7 +4,6 @@
     <item
         android:title="Explore"
         android:id="@+id/xml_toolbar_list"
-
         app:showAsAction="always">
     </item>
 

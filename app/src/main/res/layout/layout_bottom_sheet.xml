@@ -3,10 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/Theme"
     android:padding="20dp"
     >
-
 
     <LinearLayout
         android:id="@+id/layout_titel_sheet"
@@ -52,6 +51,11 @@
         <RelativeLayout
             android:layout_width="30dp"
             android:layout_height="match_parent">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/Theme"
+                android:layout_above="@+id/iamge_assigned_icon"></View>
 
             <ImageView
                 android:id="@+id/iamge_assigned_icon"
