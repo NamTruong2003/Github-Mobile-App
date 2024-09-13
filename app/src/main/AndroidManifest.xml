@@ -22,6 +22,18 @@
             android:name=".profile.Card1_"
             android:exported="false" />
         <activity
+            android:name=".profile.ProjectsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.OrganizationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.StarredRepoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.RepositoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".profile.TrophyActivity"
             android:exported="false" />
         <activity

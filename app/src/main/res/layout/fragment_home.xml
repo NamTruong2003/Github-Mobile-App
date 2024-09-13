@@ -50,7 +50,7 @@
 
         <LinearLayout
             android:id="@+id/list_item"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="486dp"
             android:layout_margin="18dp"
             android:orientation="vertical"
@@ -66,17 +66,19 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:text="My Work"
-                    android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:textStyle="bold"></TextView>
-
+                    android:textStyle="bold"
+                    android:textColor="@color/black">
+                </TextView>
                 <Space
                     android:layout_width="190dp"
-                    android:layout_height="match_parent"></Space>
-
+                    android:layout_height="match_parent"
+                    >
+                </Space>
                 <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"></Space>
+                    android:layout_height="match_parent">
+                </Space>
             </LinearLayout>
 
             <Space
@@ -87,16 +89,16 @@
                 android:id="@+id/Issues"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/button_selector"
-                android:onClick="onButtonClick"
-                android:orientation="horizontal">
-
+                android:onClick="onButtonClick">
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/background_issue_icon"
                     android:src="@drawable/issues"
-                    app:tint="@color/white">
+                    android:background="@drawable/background_issue_icon"
+                    app:tint="@color/white"
+                    android:padding="2.5dp">
 
                 </ImageView>
 
@@ -109,8 +111,8 @@
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:text="Issues"
-                    android:textColor="@color/black"
-                    android:textSize="18dp">
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
 
                 </TextView>
 
@@ -119,25 +121,24 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
-
             <LinearLayout
                 android:id="@+id/Pull_Request"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/button_selector"
-                android:onClick="onButtonClick"
-                android:orientation="horizontal">
+                android:onClick="onButtonClick">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/background_pull_request_icon"
                     android:src="@drawable/pull_request"
-                    app:tint="@color/white">
+                    android:background="@drawable/background_pull_request_icon"
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -150,8 +151,8 @@
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:text="Pull Requests"
-                    android:textColor="@color/black"
-                    android:textSize="18dp">
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
 
                 </TextView>
 
@@ -160,25 +161,24 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
-
             <LinearLayout
                 android:id="@+id/Discussion"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/button_selector"
-                android:onClick="onButtonClick"
-                android:orientation="horizontal">
+                android:onClick="onButtonClick">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/background_discussion_icon"
                     android:src="@drawable/discussion"
-                    app:tint="@color/white">
+                    android:background="@drawable/background_discussion_icon"
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -191,8 +191,8 @@
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:text="Discussions"
-                    android:textColor="@color/black"
-                    android:textSize="18dp">
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
 
                 </TextView>
 
@@ -201,25 +201,24 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
-
             <LinearLayout
                 android:id="@+id/Projects"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/button_selector"
-                android:onClick="onButtonClick"
-                android:orientation="horizontal">
+                android:onClick="onButtonClick">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/background_project_icon"
                     android:src="@drawable/project_icon"
-                    app:tint="@color/white">
+                    android:background="@drawable/background_project_icon"
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -232,8 +231,8 @@
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:text="Projects"
-                    android:textColor="@color/black"
-                    android:textSize="18dp">
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
 
                 </TextView>
 
@@ -251,16 +250,17 @@
                 android:id="@+id/repositories"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/button_selector"
-                android:onClick="onButtonClick"
-                android:orientation="horizontal">
+                android:onClick="onButtonClick">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/background_repositories_icon"
                     android:src="@drawable/repository"
-                    app:tint="@color/white">
+                    android:background="@drawable/background_repositories_icon"
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -273,8 +273,8 @@
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:text="Repositories"
-                    android:textColor="@color/black"
-                    android:textSize="18dp">
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
 
                 </TextView>
 
@@ -283,25 +283,24 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
-
             <LinearLayout
                 android:id="@+id/Organizations"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/button_selector"
-                android:onClick="onButtonClick"
-                android:orientation="horizontal">
+                android:onClick="onButtonClick">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/background_organizations_icon"
                     android:src="@drawable/orgisation"
-                    app:tint="@color/white">
+                    android:background="@drawable/background_organizations_icon"
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 
@@ -342,7 +341,8 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/background_starred_icon"
                     android:src="@drawable/star"
-                    app:tint="@color/white">
+                    app:tint="@color/white"
+                    android:padding="5dp">
 
                 </ImageView>
 

@@ -21,6 +21,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 public class NotificationFragment extends Fragment {
     private Button button1;
     private Button button2;
+    private Button resetFiltersButton;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,15 @@ public class NotificationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_notification, container, false);
         button1 = view.findViewById(R.id.button_inbox_notification);
         button2 = view.findViewById(R.id.button_Repository_notification);
+        resetFiltersButton = view.findViewById(R.id.btnResetFilters);
+
+        // Reset Filters Button action
+        resetFiltersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetAllFilters();
+            }
+        });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +63,7 @@ public class NotificationFragment extends Fragment {
 
         ToggleButton toggleButton = view.findViewById(R.id.button_Unread_notification);
         toggleButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 if (toggleButton.isChecked())
@@ -61,14 +72,16 @@ public class NotificationFragment extends Fragment {
                     textView2.setVisibility(View.GONE);
                     textView3.setVisibility(View.VISIBLE);
                     textView4.setVisibility(View.VISIBLE);
-
+                    resetFiltersButton.setVisibility(View.VISIBLE);
                 }
                 else {
                     textView4.setVisibility(View.GONE);
                     textView3.setVisibility(View.GONE);
                     textView2.setVisibility(View.VISIBLE);
                     textView1.setVisibility(View.VISIBLE);
+                    resetFiltersButton.setVisibility(View.GONE);
 
+                    resetAllFilters();
                 }
             }
         });
@@ -128,5 +141,23 @@ public class NotificationFragment extends Fragment {
 
             }
         });
+    }
+    private void resetAllFilters() {
+        TextView textViewAllCaughtUp = getView().findViewById(R.id.text_notification_after_image);
+        TextView textViewTakeABreak = getView().findViewById(R.id.text_long_notification);
+        TextView textViewNoNotifications = getView().findViewById(R.id.text_unread_on_after_image);
+        TextView textViewUseFewerFilters = getView().findViewById(R.id.text_unread_on);
+
+        // Reset all views to the original state
+        textViewAllCaughtUp.setVisibility(View.VISIBLE);
+        textViewTakeABreak.setVisibility(View.VISIBLE);
+        textViewNoNotifications.setVisibility(View.GONE);
+        textViewUseFewerFilters.setVisibility(View.GONE);
+
+        // Hide the reset filters button again
+        resetFiltersButton.setVisibility(View.GONE);
+
+        // Reset the button text back to "Inbox"
+        updateButtonText("Inbox");
     }
 }

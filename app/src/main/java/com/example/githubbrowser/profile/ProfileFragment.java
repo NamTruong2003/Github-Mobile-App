@@ -27,10 +27,11 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        CardView Card1 = view.findViewById(R.id.Card1);
-        CardView Card3 = view.findViewById(R.id.Card3);
-        CardView Card2 = view.findViewById(R.id.Card2);
+
+        View currentView = inflater.inflate(R.layout.fragment_profile, container, false);
+        CardView Card1 = currentView.findViewById(R.id.Card1);
+        CardView Card3 = currentView.findViewById(R.id.Card3);
+        CardView Card2 = currentView.findViewById(R.id.Card2);
 
         Card1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +55,7 @@ public class ProfileFragment extends Fragment {
             }
         });
         // setting up setting button
-        ImageButton settingButton = view.findViewById(R.id.settingButton);
+        ImageButton settingButton = currentView.findViewById(R.id.settingButton);
         if(settingButton != null){
             settingButton.setOnClickListener(v -> {
                 Intent intent = new Intent(
@@ -65,7 +66,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // Setting up follower button
-        Button followerButton = view.findViewById(R.id.followerButton);
+        Button followerButton = currentView.findViewById(R.id.followerButton);
         if(followerButton != null){
             followerButton.setOnClickListener(v -> {
                 Intent intent = new Intent(
@@ -76,7 +77,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // Setting up trophy button
-        Button trophyButton = view.findViewById(R.id.trophyButton);
+        Button trophyButton = currentView.findViewById(R.id.trophyButton);
         if(trophyButton != null){
             trophyButton.setOnClickListener(v -> {
                 Intent intent = new Intent(
@@ -92,12 +93,43 @@ public class ProfileFragment extends Fragment {
         String[] trailingText = {"0", "0", "0", "0"};
         Integer[] imgid = {R.drawable.repository, R.drawable.star, R.drawable.orgisation,R.drawable.project_icon};
         SettingListAdapter adapter = new SettingListAdapter(R.layout.listview_function_item, getActivity(), leadingText, trailingText, imgid);
-        ListView listView = view.findViewById(R.id.functionListView);
+        ListView listView = currentView.findViewById(R.id.functionListView);
         listView.setAdapter(adapter);
         setListViewHeightBasedOnItems(listView);
 
+        // set click on items
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent;
+            switch (position){
+                case 0:
+                    intent = new Intent(
+                            requireContext(), RepositoryActivity.class
+                    );
+                    startActivity(intent);
+                    break;
+                case 1:
+                    intent = new Intent(
+                            requireContext(), StarredRepoActivity.class
+                    );
+                    startActivity(intent);
+                    break;
+                case 2:
+                    intent = new Intent(
+                            requireContext(), OrganizationActivity.class
+                    );
+                    startActivity(intent);
+                    break;
+                case 3:
+                    intent = new Intent(
+                            requireContext(), ProjectsActivity.class
+                    );
+                    startActivity(intent);
+                    break;
+            }
+        });
+
         // Inflate the layout for this fragment
-        return view;
+        return currentView;
     }
 
     public static void setListViewHeightBasedOnItems(ListView listView) {
