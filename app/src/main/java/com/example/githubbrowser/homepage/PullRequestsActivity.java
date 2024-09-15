@@ -2,11 +2,13 @@ package com.example.githubbrowser.homepage;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,11 +35,15 @@ public class PullRequestsActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.text_pull_requests);
         EditText editText = findViewById(R.id.edit_text_pull_requests);
         searchButton.setOnClickListener(view -> {
-            editText.setVisibility(View.VISIBLE); // Show the EditText
-            textView.setVisibility(View.GONE); // Hide the Search button
+            Toast.makeText(getApplicationContext(),R.string.search,Toast.LENGTH_SHORT).show();
+            editText.setVisibility(View.VISIBLE);
+            textView.setVisibility(View.GONE);
             editText.getText();
         });
-        backButton.setOnClickListener(view -> onBackPressed());
+        backButton.setOnClickListener(view -> {
+            Toast.makeText(getApplicationContext(), R.string.back, Toast.LENGTH_SHORT).show();
+            onBackPressed();
+        });
         Spinner spinner1 = findViewById(R.id.open_menu_pull_quests);
         Spinner spinner2 = findViewById(R.id.Created_menu_pull_requests);
         Spinner spinner3 = findViewById(R.id.visibility_menu_pull_request);
@@ -72,6 +78,25 @@ public class PullRequestsActivity extends AppCompatActivity {
         spinner4.setAdapter(adapter4);
         spinner5.setAdapter(adapter5);
         spinner6.setAdapter(adapter6);
+
+        setupSpinnerListener(spinner1,items1);
+        setupSpinnerListener(spinner2,items2);
+        setupSpinnerListener(spinner3,items3);
+        setupSpinnerListener(spinner4,items4);
+        setupSpinnerListener(spinner5,items5);
+        setupSpinnerListener(spinner6,items6);
+    }
+    public void setupSpinnerListener(Spinner spinner, String[] items) {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedItem = items[i];
+                Toast.makeText(getApplicationContext(), "Spinner: " + selectedItem, Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
     }
     @Override
     public void onBackPressed() {

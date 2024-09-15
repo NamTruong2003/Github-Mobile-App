@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,11 +32,15 @@ public class StarredActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.text_starred);
         EditText editText = findViewById(R.id.edit_text_starred);
         searchButton.setOnClickListener(view -> {
-            editText.setVisibility(View.VISIBLE); // Show the EditText
-            textView.setVisibility(View.GONE); // Hide the Search button
+            Toast.makeText(getApplicationContext(), R.string.search, Toast.LENGTH_SHORT).show();
+            editText.setVisibility(View.VISIBLE);
+            textView.setVisibility(View.GONE);
             editText.getText();
         });
-        backButton.setOnClickListener(view -> onBackPressed());
+        backButton.setOnClickListener(view -> {
+            Toast.makeText(getApplicationContext(), R.string.back, Toast.LENGTH_SHORT).show();
+            onBackPressed();
+        });
     }
     @Override
     public void onBackPressed() {

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -32,7 +33,6 @@ public class SearchingActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.toolbar_menu, toolbar1.getMenu());
         return true;
     }
@@ -40,6 +40,7 @@ public class SearchingActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.backButton) {
+            Toast.makeText(getApplicationContext(), R.string.back, Toast.LENGTH_SHORT).show();
             onBackPressed();
             return true;
         }

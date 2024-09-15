@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.githubbrowser.R;
 
@@ -79,6 +80,7 @@ public class HomeFragment extends Fragment {
         customView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(),  getString(R.string.open) + " Issues", Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent(requireContext(), IssueActivity.class);
                 startActivity(intent1);
             }
@@ -87,6 +89,8 @@ public class HomeFragment extends Fragment {
         customView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), getString(R.string.open) + " Pull Request", Toast.LENGTH_SHORT).show();
+
                 Intent intent2 = new Intent(requireContext(), PullRequestsActivity.class);
                 startActivity(intent2);
             }
@@ -95,6 +99,8 @@ public class HomeFragment extends Fragment {
         customView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), getString(R.string.open) +  " Discussion", Toast.LENGTH_SHORT).show();
+
                 Intent intent3 = new Intent(requireContext(), DiscussionsActivity.class);
                 startActivity(intent3);
             }
@@ -103,6 +109,8 @@ public class HomeFragment extends Fragment {
         customView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), getString(R.string.open) + " Projects", Toast.LENGTH_SHORT).show();
+
                 Intent intent4 = new Intent(requireContext(), ProjectActivity.class);
                 startActivity(intent4);
             }
@@ -111,6 +119,7 @@ public class HomeFragment extends Fragment {
         customView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), getString(R.string.open) + " Repositories", Toast.LENGTH_SHORT).show();
                 Intent intent5 = new Intent(requireContext(), RepositoriesActivity.class);
                 startActivity(intent5);
             }
@@ -119,6 +128,8 @@ public class HomeFragment extends Fragment {
         customView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), getString(R.string.open) + " Organizations", Toast.LENGTH_SHORT).show();
+
                 Intent intent6 = new Intent(requireContext(), OrganizationsActivity.class);
                 startActivity(intent6);
             }
@@ -127,6 +138,8 @@ public class HomeFragment extends Fragment {
         customView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), getString(R.string.open) + " Starrted", Toast.LENGTH_SHORT).show();
+
                 Intent intent7 = new Intent(requireContext(), StarredActivity.class);
                 startActivity(intent7);
             }
@@ -144,12 +157,16 @@ public class HomeFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.Searching_button)
         {
+            Toast.makeText(getContext(), getString(R.string.open) + " Searching activity", Toast.LENGTH_SHORT).show();
+
             Intent intent = new Intent(requireContext(), SearchingActivity.class);
             startActivity(intent);
             return true;
         }
         if (item.getItemId()== R.id.AddmoreButton)
         {
+            Toast.makeText(getContext(), getString(R.string.open) + " Adding More activity", Toast.LENGTH_SHORT).show();
+
             Intent intent = new Intent(requireContext(), CreateIssueActivity.class );
             startActivity(intent);
             return true;

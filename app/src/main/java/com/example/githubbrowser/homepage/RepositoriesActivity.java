@@ -2,11 +2,13 @@ package com.example.githubbrowser.homepage;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +32,10 @@ public class RepositoriesActivity extends AppCompatActivity {
         });
 
         ImageButton backButton = findViewById(R.id.backButton_repositories);
-        backButton.setOnClickListener(view -> onBackPressed());
+        backButton.setOnClickListener(view -> {
+            Toast.makeText(getApplicationContext(),R.string.back,Toast.LENGTH_SHORT).show();
+            onBackPressed();
+        });
         Spinner spinner1 = findViewById(R.id.open_menu_repositories);
 
         String[] items1 = {"All", "Archived", "Fork","Mirror", "Private", "Public", "Source", "Template"};
@@ -40,7 +45,21 @@ public class RepositoriesActivity extends AppCompatActivity {
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
         spinner1.setAdapter(adapter1);
+        setupSpinnerListener(spinner1,items1);
     }
+    public void setupSpinnerListener(Spinner spinner, String[] items) {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedItem = items[i];
+                Toast.makeText(getApplicationContext(), "Spinner: " + selectedItem, Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

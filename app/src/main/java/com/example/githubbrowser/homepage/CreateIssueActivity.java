@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,11 +33,15 @@ public class CreateIssueActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.edit_text_create_issue);
 
         searchButton.setOnClickListener(view -> {
+            Toast.makeText(getApplicationContext(), R.string.search, Toast.LENGTH_SHORT).show();
             editText.setVisibility(View.VISIBLE);
             linearLayout.setVisibility(View.GONE);
             editText.getText();
         });
-        backButton.setOnClickListener(view -> onBackPressed());
+        backButton.setOnClickListener(view -> {
+            Toast.makeText(getApplicationContext(), R.string.back, Toast.LENGTH_SHORT).show();
+            onBackPressed();
+        });
     }
     @Override
     public void onBackPressed() {

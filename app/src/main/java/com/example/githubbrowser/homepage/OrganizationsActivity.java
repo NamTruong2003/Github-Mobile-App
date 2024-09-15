@@ -2,6 +2,7 @@ package com.example.githubbrowser.homepage;
 
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +25,10 @@ public class OrganizationsActivity extends AppCompatActivity {
             return insets;
         });
         ImageButton backButton = findViewById(R.id.backButton_organizations);
-        backButton.setOnClickListener(view -> onBackPressed());
+        backButton.setOnClickListener(view -> {
+            Toast.makeText(getApplicationContext(), R.string.back, Toast.LENGTH_SHORT).show();
+            onBackPressed();
+        });
     }
     @Override
     public void onBackPressed() {

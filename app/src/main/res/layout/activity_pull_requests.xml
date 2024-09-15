@@ -172,6 +172,7 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_below="@+id/image_pull_requests"
+            android:gravity="center"
             ></TextView>
     </RelativeLayout>
 

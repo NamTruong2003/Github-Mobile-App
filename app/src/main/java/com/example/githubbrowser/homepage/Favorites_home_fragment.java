@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.githubbrowser.R;
 
@@ -68,6 +69,8 @@ public class Favorites_home_fragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), getString(R.string.open) + " Favorites activity", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(requireContext(), Favorites_Activity.class);
                 startActivity(intent);
             }
