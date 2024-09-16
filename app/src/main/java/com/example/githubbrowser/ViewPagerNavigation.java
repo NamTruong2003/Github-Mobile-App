@@ -20,14 +20,13 @@ public class ViewPagerNavigation extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
        switch (position)
        {
-           case 0:
-               return new HomeFragment();
            case 1:
                return new NotificationFragment();
            case 2:
                return new ExploreFragment();
            case 3:
                 return new ProfileFragment();
+           case 0:
            default:
                return new HomeFragment();
        }
