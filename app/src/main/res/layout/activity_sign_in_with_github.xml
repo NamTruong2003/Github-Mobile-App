@@ -121,6 +121,7 @@
 
 
     <Button
+        android:id="@+id/signInWithAPasskeyButton"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/round_view"
