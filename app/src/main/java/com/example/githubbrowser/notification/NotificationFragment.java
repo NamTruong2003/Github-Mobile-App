@@ -1,6 +1,7 @@
 package com.example.githubbrowser.notification;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -8,20 +9,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.example.githubbrowser.R;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class NotificationFragment extends Fragment {
     private Button button1;
     private Button button2;
     private Button resetFiltersButton;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +41,7 @@ public class NotificationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 resetAllFilters();
+                Toast.makeText(getActivity(), "Filters reset", Toast.LENGTH_SHORT).show(); // Toast added
             }
         });
 
@@ -48,14 +49,18 @@ public class NotificationFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 clickOpenBottomSheet();
+                Toast.makeText(getActivity(), "Inbox button clicked", Toast.LENGTH_SHORT).show(); // Toast added
             }
         });
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 clickOpenBottomSheet2();
+                Toast.makeText(getActivity(), "Repository button clicked", Toast.LENGTH_SHORT).show(); // Toast added
             }
         });
+
         TextView textView1 = view.findViewById(R.id.text_notification_after_image);
         TextView textView2 = view.findViewById(R.id.text_long_notification);
         TextView textView3 = view.findViewById(R.id.text_unread_on);
@@ -66,31 +71,32 @@ public class NotificationFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                if (toggleButton.isChecked())
-                {
+                if (toggleButton.isChecked()) {
                     textView1.setVisibility(View.GONE);
                     textView2.setVisibility(View.GONE);
                     textView3.setVisibility(View.VISIBLE);
                     textView4.setVisibility(View.VISIBLE);
                     resetFiltersButton.setVisibility(View.VISIBLE);
-                }
-                else {
+                    Toast.makeText(getActivity(), "Unread notifications enabled", Toast.LENGTH_SHORT).show(); // Toast added
+                } else {
                     textView4.setVisibility(View.GONE);
                     textView3.setVisibility(View.GONE);
                     textView2.setVisibility(View.VISIBLE);
                     textView1.setVisibility(View.VISIBLE);
                     resetFiltersButton.setVisibility(View.GONE);
-
                     resetAllFilters();
+                    Toast.makeText(getActivity(), "Unread notifications disabled", Toast.LENGTH_SHORT).show(); // Toast added
                 }
             }
         });
 
         return view;
     }
-    public void updateButtonText(String newText){
+
+    public void updateButtonText(String newText) {
         button1.setText(newText);
     }
+
     private void clickOpenBottomSheet() {
         View bottomSheetView = getLayoutInflater().inflate(R.layout.layout_bottom_sheet, null);
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
@@ -103,8 +109,8 @@ public class NotificationFragment extends Fragment {
                 RadioButton radioButton = bottomSheetView.findViewById(checkedId);
                 String selectedText = radioButton.getText().toString();
                 updateButtonText(selectedText);
-
-                }
+                Toast.makeText(getActivity(), "Selected: " + selectedText, Toast.LENGTH_SHORT).show(); // Toast added
+            }
         });
         Button backButton = bottomSheetView.findViewById(R.id.backButton_bottom_sheet);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -115,8 +121,8 @@ public class NotificationFragment extends Fragment {
         });
 
     }
-    private void clickOpenBottomSheet2()
-    {
+
+    private void clickOpenBottomSheet2() {
         View bottomSheetView2 = getLayoutInflater().inflate(R.layout.layout_bottom_sheet_2, null);
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         bottomSheetDialog.setContentView(bottomSheetView2);
@@ -138,26 +144,30 @@ public class NotificationFragment extends Fragment {
             public void onClick(View view) {
                 textView1.setVisibility(View.GONE);
                 textView2.setVisibility(View.VISIBLE);
-
+                Toast.makeText(getActivity(), "Searching notifications...", Toast.LENGTH_SHORT).show(); // Toast added
             }
         });
     }
+
     private void resetAllFilters() {
-        TextView textViewAllCaughtUp = getView().findViewById(R.id.text_notification_after_image);
-        TextView textViewTakeABreak = getView().findViewById(R.id.text_long_notification);
-        TextView textViewNoNotifications = getView().findViewById(R.id.text_unread_on_after_image);
-        TextView textViewUseFewerFilters = getView().findViewById(R.id.text_unread_on);
+        // Ensure the view is not null before accessing its elements
+        if (getView() != null) {
+            TextView textViewAllCaughtUp = getView().findViewById(R.id.text_notification_after_image);
+            TextView textViewTakeABreak = getView().findViewById(R.id.text_long_notification);
+            TextView textViewNoNotifications = getView().findViewById(R.id.text_unread_on_after_image);
+            TextView textViewUseFewerFilters = getView().findViewById(R.id.text_unread_on);
 
-        // Reset all views to the original state
-        textViewAllCaughtUp.setVisibility(View.VISIBLE);
-        textViewTakeABreak.setVisibility(View.VISIBLE);
-        textViewNoNotifications.setVisibility(View.GONE);
-        textViewUseFewerFilters.setVisibility(View.GONE);
+            // Reset all views to the original state
+            textViewAllCaughtUp.setVisibility(View.VISIBLE);
+            textViewTakeABreak.setVisibility(View.VISIBLE);
+            textViewNoNotifications.setVisibility(View.GONE);
+            textViewUseFewerFilters.setVisibility(View.GONE);
 
-        // Hide the reset filters button again
-        resetFiltersButton.setVisibility(View.GONE);
+            // Hide the reset filters button again
+            resetFiltersButton.setVisibility(View.GONE);
 
-        // Reset the button text back to "Inbox"
-        updateButtonText("Inbox");
+            // Reset the button text back to "Inbox"
+            updateButtonText("Inbox");
+        }
     }
 }
