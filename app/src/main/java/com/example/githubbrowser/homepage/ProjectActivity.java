@@ -18,8 +18,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.githubbrowser.R;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class ProjectActivity extends AppCompatActivity {
 
+    private AtomicBoolean isfirstItem1 = new AtomicBoolean(true);
+    private AtomicBoolean isfirstItem2 = new AtomicBoolean(true);
+    private AtomicBoolean isfirstItem6 = new AtomicBoolean(true);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,17 +70,22 @@ public class ProjectActivity extends AppCompatActivity {
         spinner2.setAdapter(adapter2);
         spinner6.setAdapter(adapter6);
 
-        setupSpinnerListener(spinner1, items1);
-        setupSpinnerListener(spinner2,items2);
-        setupSpinnerListener(spinner6,items6);
+        setupSpinnerListener(spinner1, items1,isfirstItem1);
+        setupSpinnerListener(spinner2,items2,isfirstItem2);
+        setupSpinnerListener(spinner6,items6,isfirstItem6);
     }
-    public void setupSpinnerListener(Spinner spinner, String[] items) {
+    public void setupSpinnerListener(Spinner spinner, String[] items,final AtomicBoolean isfirstselection) {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String selectedItem = items[i];
-                Toast.makeText(getApplicationContext(), "Spinner: " + selectedItem, Toast.LENGTH_SHORT).show();
+                if (!isfirstselection.get()) {
+                    String selectedItem = items[i];
+                    Toast.makeText(getApplicationContext(), "Spinner: " + selectedItem, Toast.LENGTH_SHORT).show();
+                } else {
+                    isfirstselection.set(false);
+                }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }

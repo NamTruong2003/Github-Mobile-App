@@ -77,6 +77,7 @@
             android:orientation="horizontal">
 
             <Spinner
+                android:padding="8dp"
                 android:id="@+id/open_menu_discussion"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -89,6 +90,7 @@
             </Space>
 
             <Spinner
+                android:padding="8dp"
                 android:id="@+id/Created_menu_discussion"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -101,6 +103,7 @@
             </Space>
 
             <Spinner
+                android:padding="8dp"
                 android:id="@+id/visibility_menu_discussion"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -112,6 +115,7 @@
 
             </Space>
             <Spinner
+                android:padding="8dp"
                 android:id="@+id/Sort_menu_discussion"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
