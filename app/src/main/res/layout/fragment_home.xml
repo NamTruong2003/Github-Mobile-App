@@ -50,7 +50,7 @@
 
         <LinearLayout
             android:id="@+id/list_item"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="486dp"
             android:layout_margin="18dp"
             android:orientation="vertical"
@@ -103,9 +103,9 @@
                 </ImageView>
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    />
 
                 <TextView
                     android:layout_width="180dp"
@@ -143,9 +143,9 @@
                 </ImageView>
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                   />
 
                 <TextView
                     android:layout_width="180dp"
@@ -183,9 +183,9 @@
                 </ImageView>
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                  />
 
                 <TextView
                     android:layout_width="180dp"
@@ -223,9 +223,9 @@
                 </ImageView>
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                     />
 
                 <TextView
                     android:layout_width="180dp"
@@ -265,9 +265,9 @@
                 </ImageView>
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    />
 
                 <TextView
                     android:layout_width="180dp"
@@ -305,9 +305,9 @@
                 </ImageView>
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                   />
 
                 <TextView
                     android:layout_width="180dp"
@@ -347,9 +347,9 @@
                 </ImageView>
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                     />
 
                 <TextView
                     android:layout_width="180dp"
@@ -394,7 +394,7 @@
                 android:id="@+id/fragmentContainerView2"
                 android:name="com.example.githubbrowser.homepage.ShortcustFragment"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="400dp" />
 
             <View
                 android:layout_width="match_parent"

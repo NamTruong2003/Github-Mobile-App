@@ -77,10 +77,13 @@
             android:orientation="horizontal">
 
             <Spinner
+                android:paddingRight="8dp"
                 android:id="@+id/open_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@drawable/spinner_background"></Spinner>
+                android:background="@drawable/spinner_background"
+
+                ></Spinner>
             <Space
                 android:layout_width="5dp"
                 android:layout_height="match_parent"
@@ -89,6 +92,7 @@
             </Space>
 
             <Spinner
+                android:paddingRight="8dp"
                 android:id="@+id/Created_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -101,6 +105,7 @@
             </Space>
 
             <Spinner
+                android:paddingRight="8dp"
                 android:id="@+id/visibility_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -112,6 +117,7 @@
 
             </Space>
             <Spinner
+                android:paddingRight="8dp"
                 android:id="@+id/organization_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -124,6 +130,7 @@
             </Space>
 
             <Spinner
+                android:paddingRight="8dp"
                 android:id="@+id/Repository_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -136,6 +143,7 @@
             </Space>
 
             <Spinner
+                android:paddingRight="8dp"
                 android:id="@+id/Sort_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

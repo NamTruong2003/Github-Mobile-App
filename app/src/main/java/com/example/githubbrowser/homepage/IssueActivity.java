@@ -18,9 +18,16 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.githubbrowser.R;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class IssueActivity extends AppCompatActivity {
 
-
+    private AtomicBoolean isfirstItem1 = new AtomicBoolean(true);
+    private AtomicBoolean isfirstItem2 = new AtomicBoolean(true);
+    private AtomicBoolean isfirstItem3 = new AtomicBoolean(true);
+    private AtomicBoolean isfirstItem4 = new AtomicBoolean(true);
+    private AtomicBoolean isfirstItem5 = new AtomicBoolean(true);
+    private AtomicBoolean isfirstItem6 = new AtomicBoolean(true);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,21 +89,26 @@ public class IssueActivity extends AppCompatActivity {
         spinner5.setAdapter(adapter5);
         spinner6.setAdapter(adapter6);
 
-        setupSpinnerListener(spinner1, items1);
-        setupSpinnerListener(spinner2, items2);
-        setupSpinnerListener(spinner3, items3);
-        setupSpinnerListener(spinner4, items4);
-        setupSpinnerListener(spinner5, items5);
-        setupSpinnerListener(spinner6, items6);
+        setupSpinnerListener(spinner1, items1,isfirstItem1);
+        setupSpinnerListener(spinner2, items2,isfirstItem2);
+        setupSpinnerListener(spinner3, items3,isfirstItem3);
+        setupSpinnerListener(spinner4, items4,isfirstItem4);
+        setupSpinnerListener(spinner5, items5,isfirstItem5);
+        setupSpinnerListener(spinner6, items6,isfirstItem6);
 
     }
-    public void setupSpinnerListener(Spinner spinner, String[] items) {
+    public void setupSpinnerListener(Spinner spinner, String[] items,final AtomicBoolean isfirstselection) {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String selectedItem = items[i];
-                Toast.makeText(getApplicationContext(), "Spinner: " + selectedItem, Toast.LENGTH_SHORT).show();
+                if (!isfirstselection.get()) {
+                    String selectedItem = items[i];
+                    Toast.makeText(getApplicationContext(), "Spinner: " + selectedItem, Toast.LENGTH_SHORT).show();
+                } else {
+                    isfirstselection.set(false);
+                }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
