@@ -69,7 +69,7 @@ public class ShortcustFragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), R.string.open + "Shortcut Activity", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getString(R.string.open) + " Shortcut Activity", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(requireContext(), Shortcut_Activity.class);
                 startActivity(intent);
             }

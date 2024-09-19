@@ -47,13 +47,13 @@ public class SignInWithGithubActivity extends AppCompatActivity {
 
             Intent intent01 = new Intent(SignInWithGithubActivity.this, MainActivity.class);
             startActivity(intent01);
+            username.setText("");
+            password.setText("");
         });
 
         signInWithAPasskeyButton.setOnClickListener(view -> {
             Toast.makeText(this, "Passkey sign-in is coming soon!\nStay tuned for updates."
                     , Toast.LENGTH_SHORT).show();
         });
-
-
     }
 }
