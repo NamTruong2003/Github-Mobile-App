@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/Theme"
-    tools:context=".profile.Card1_">
+    tools:context=".profile.Card1">
 
     <LinearLayout
         android:layout_width="match_parent"

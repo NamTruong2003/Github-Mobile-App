@@ -13,13 +13,13 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".profile.Card3_"
+            android:name=".profile.Card3"
             android:exported="false" />
         <activity
-            android:name=".profile.Card2_"
+            android:name=".profile.Card2"
             android:exported="false" />
         <activity
-            android:name=".profile.Card1_"
+            android:name=".profile.Card1"
             android:exported="false" />
         <activity
             android:name=".profile.ProjectsActivity"

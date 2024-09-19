@@ -3,7 +3,9 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:id="@+id/listViewSettingItem">
+    android:id="@+id/listViewSettingItem"
+    android:paddingHorizontal="10dp">
+
 
     <ImageView
         android:id="@+id/image_setting"

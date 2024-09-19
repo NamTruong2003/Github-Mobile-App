@@ -15,7 +15,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.githubbrowser.R;
-import com.example.githubbrowser.homepage.PullRequestsActivity;
 
 public class ProfileFragment extends Fragment {
 
@@ -36,24 +35,26 @@ public class ProfileFragment extends Fragment {
         Card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent_card1 = new Intent(requireContext(), Card1_.class);
+                Intent intent_card1 = new Intent(requireContext(), com.example.githubbrowser.profile.Card1.class);
                 startActivity(intent_card1);
             }
         });
         Card2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent_card2 = new Intent(requireContext(), Card2_.class);
+                Intent intent_card2 = new Intent(requireContext(), com.example.githubbrowser.profile.Card2.class);
                 startActivity(intent_card2);
             }
         });
         Card3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent_card3 = new Intent(requireContext(), Card3_.class);
+                Intent intent_card3 = new Intent(requireContext(), com.example.githubbrowser.profile.Card3.class);
                 startActivity(intent_card3);
             }
         });
+
+
         // setting up setting button
         ImageButton settingButton = currentView.findViewById(R.id.settingButton);
         if(settingButton != null){

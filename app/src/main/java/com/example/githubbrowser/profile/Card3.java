@@ -11,19 +11,19 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.githubbrowser.R;
 
-public class Card2_ extends AppCompatActivity {
+public class Card3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_card2);
+        setContentView(R.layout.activity_card3);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ImageButton backButton = findViewById(R.id.backButton_Card2_activity);
+        ImageButton backButton = findViewById(R.id.backButton_Card3_activity);
         backButton.setOnClickListener(view -> onBackPressed());
     }
     @Override

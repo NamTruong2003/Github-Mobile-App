@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.githubbrowser.R;
 
-public class Card1_ extends AppCompatActivity {
+public class Card1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
