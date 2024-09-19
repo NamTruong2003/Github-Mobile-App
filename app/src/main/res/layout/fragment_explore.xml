@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Theme"
+    android:id="@+id/fragment_container"
     >
 
     <androidx.appcompat.widget.Toolbar
+
         android:id="@+id/xml_title_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -113,13 +115,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Add the FrameLayout for fragment container -->
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
 
-    </FrameLayout>
 
 </RelativeLayout>
