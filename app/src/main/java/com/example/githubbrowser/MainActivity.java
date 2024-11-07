@@ -1,7 +1,9 @@
 package com.example.githubbrowser;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        Log.i("Access Token", UserInformation.getAccessToken());
 
         mviewPager = findViewById(R.id.view_pager);
         mbottomNavigationView = findViewById(R.id.bottom_navigation);

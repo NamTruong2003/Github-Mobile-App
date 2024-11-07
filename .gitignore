@@ -31,3 +31,6 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+#file Client ID and Client Secret
+Constant.java
