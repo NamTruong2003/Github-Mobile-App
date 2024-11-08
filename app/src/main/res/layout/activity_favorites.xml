@@ -71,7 +71,7 @@
             android:id="@+id/imageView"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-           android:src="@drawable/baseline_search_24"/>
+            android:src="@drawable/baseline_search_24"/>
 
         <Space
             android:layout_width="10dp"
@@ -137,20 +137,23 @@
         android:layout_height="18dp"
         android:background="@color/white" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical">
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:foregroundGravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/textView3"
+        <LinearLayout
+            android:id="@+id/holdContentLayout_favorites"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:text="  Select Repositories"
-            android:textSize="18dp"
-            android:textColor="@color/black" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:orientation="vertical"
+            tools:ignore="InvalidId">
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

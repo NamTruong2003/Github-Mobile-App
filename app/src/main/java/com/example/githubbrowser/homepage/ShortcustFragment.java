@@ -64,16 +64,15 @@ public class ShortcustFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_shortcust, container, false);
+        View view = inflater.inflate(R.layout.fragment_shortcust, container, false);
         ImageButton imageButton = view.findViewById(R.id.button_get_started);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), getString(R.string.open) + " Shortcut Activity", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(requireContext(), Shortcut_Activity.class);
                 startActivity(intent);
             }
         });
-       return view;
+        return view;
     }
 }

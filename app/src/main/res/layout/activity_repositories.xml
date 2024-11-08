@@ -51,7 +51,8 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:foregroundGravity="center_vertical">
+        android:foregroundGravity="center_vertical"
+        >
         <LinearLayout
             android:id="@+id/spinner_menu"
             android:layout_width="500dp"
@@ -77,7 +78,9 @@
         android:id="@+id/center_repositories"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Theme">
+        android:background="@color/Theme"
+        android:visibility="gone"
+        >
 
         <ImageView
             android:id="@+id/image_repositories"
@@ -98,5 +101,24 @@
             android:layout_below="@+id/image_repositories"
             ></TextView>
     </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:foregroundGravity="center_horizontal">
+
+        <LinearLayout
+            android:id="@+id/holdContentLayout_repositories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="18dp"
+            android:orientation="vertical"
+            tools:ignore="InvalidId"
+            >
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
