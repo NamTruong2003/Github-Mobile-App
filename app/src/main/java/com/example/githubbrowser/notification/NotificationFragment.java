@@ -1,6 +1,7 @@
 package com.example.githubbrowser.notification;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -15,16 +16,29 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.example.githubbrowser.R;
+import com.example.githubbrowser.api.GitHubApiService;
+import com.example.githubbrowser.api.RetrofitClient;
+import com.example.githubbrowser.UserInformation;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class NotificationFragment extends Fragment {
+    private static final String BASE_URL = "https://api.github.com/";
+
     private Button button1;
     private Button button2;
     private Button resetFiltersButton;
+    private TextView textView1, textView2, textView3, textView4;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fetchNotifications(); // Fetch notifications on fragment creation
     }
 
     @Override
@@ -35,6 +49,11 @@ public class NotificationFragment extends Fragment {
         button1 = view.findViewById(R.id.button_inbox_notification);
         button2 = view.findViewById(R.id.button_Repository_notification);
         resetFiltersButton = view.findViewById(R.id.btnResetFilters);
+
+        textView1 = view.findViewById(R.id.text_notification_after_image);
+        textView2 = view.findViewById(R.id.text_long_notification);
+        textView3 = view.findViewById(R.id.text_unread_on);
+        textView4 = view.findViewById(R.id.text_unread_on_after_image);
 
         // Reset Filters Button action
         resetFiltersButton.setOnClickListener(new View.OnClickListener() {
@@ -61,14 +80,8 @@ public class NotificationFragment extends Fragment {
             }
         });
 
-        TextView textView1 = view.findViewById(R.id.text_notification_after_image);
-        TextView textView2 = view.findViewById(R.id.text_long_notification);
-        TextView textView3 = view.findViewById(R.id.text_unread_on);
-        TextView textView4 = view.findViewById(R.id.text_unread_on_after_image);
-
         ToggleButton toggleButton = view.findViewById(R.id.button_Unread_notification);
         toggleButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 if (toggleButton.isChecked()) {
@@ -169,5 +182,43 @@ public class NotificationFragment extends Fragment {
             // Reset the button text back to "Inbox"
             updateButtonText("Inbox");
         }
+    }
+
+    private void fetchNotifications() {
+        String token = UserInformation.getAccessToken();
+        if (token == null || token.isEmpty()) {
+            Toast.makeText(getActivity(), "User not logged in", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        GitHubApiService apiService = RetrofitClient.getClient(BASE_URL).create(GitHubApiService.class);
+        Call<List<Notification>> call = apiService.getNotifications("token " + token);
+
+        call.enqueue(new Callback<List<Notification>>() {
+            @Override
+            public void onResponse(Call<List<Notification>> call, Response<List<Notification>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    List<Notification> notifications = response.body();
+                    if (!notifications.isEmpty()) {
+                        textView1.setText(notifications.get(0).getReason());
+                        // Update UI with notification details
+                        for (Notification notification : notifications) {
+                            Log.d("NotificationFragment", "Notification ID: " + notification.getId());
+                        }
+                        // Show success notification
+                        Toast.makeText(getActivity(), "Notifications fetched successfully", Toast.LENGTH_SHORT).show();
+                    } else {
+                        textView1.setText("No notifications available.");
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "Failed to fetch notifications", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Notification>> call, Throwable t) {
+                Toast.makeText(getActivity(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

@@ -166,7 +166,7 @@ public class Activity_view extends Fragment {
         try {
             String url ="https://api.github.com/user";
             jsonString = handler.httpServiceCall(url,token);
-            
+
             if(jsonString != null){
                 JSONObject jsonObject = new JSONObject(jsonString);
                 name = jsonObject.getString("login");
