@@ -64,13 +64,11 @@ public class Favorites_home_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_favorites_home_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_favorites_home_fragment, container, false);
         ImageButton imageButton = view.findViewById(R.id.button_add_favorites);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), getString(R.string.open) + " Favorites activity", Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(requireContext(), Favorites_Activity.class);
                 startActivity(intent);
             }

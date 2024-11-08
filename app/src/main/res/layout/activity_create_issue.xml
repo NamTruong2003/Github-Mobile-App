@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".homepage.CreateIssueActivity"
+    android:orientation="vertical"
     android:background="@color/Theme">
 
     <LinearLayout
@@ -81,6 +82,25 @@
             android:layout_height="match_parent"
             android:background="@color/white"></Space>
     </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:foregroundGravity="center_horizontal">
+
+        <LinearLayout
+            android:id="@+id/holdContentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="18dp"
+            android:orientation="vertical"
+            tools:ignore="InvalidId"
+            >
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
