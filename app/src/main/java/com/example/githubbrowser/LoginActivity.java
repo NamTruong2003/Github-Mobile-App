@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +33,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
-
+//        if(UserInformation.getAccessToken() != null){
+//            Intent intent01 = new Intent(LoginActivity.this, MainActivity.class);
+//            startActivity(intent01);
+//            Toast.makeText(this, "Welcome back", Toast.LENGTH_SHORT).show();
+//        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -49,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     private void startGithubLogin() {
+
         String redirectUri = "usthgithub://jmaqhuy.id.vn";
         String scope = "repo user";
         String authUrl = "https://github.com/login/oauth/authorize" +
