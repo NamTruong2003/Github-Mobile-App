@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/unread_notification"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="10dp"
+
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/repository_fullname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="jmaqhuy / Github-Mobile-App"
+        android:textColor="@color/black"
+
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/notification_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update NotificationFrament"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Description provided"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+</LinearLayout>
