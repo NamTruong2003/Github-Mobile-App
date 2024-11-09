@@ -94,7 +94,7 @@ public class RepositoryActivity extends AppCompatActivity {
                 repoListView = findViewById(R.id.list_repo_1);
 
                 // adapter
-                RepoVerticalAdapter repoVerticalAdapter = new RepoVerticalAdapter(this, R.layout.item_repo,repoArrayList);
+                repoVerticalAdapter = new RepoVerticalAdapter(this, R.layout.item_repo,repoArrayList);
 
                 // set adapter
                 repoListView.setAdapter(repoVerticalAdapter);
