@@ -2,18 +2,17 @@ package com.example.githubbrowser.notification;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RadioGroup;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.githubbrowser.R;
 import com.example.githubbrowser.api.GitHubApiService;
@@ -30,10 +29,10 @@ import retrofit2.Response;
 public class NotificationFragment extends Fragment {
     private static final String BASE_URL = "https://api.github.com/";
 
-    private Button button1;
-    private Button button2;
+    private Button inboxButton;
+    private Button repositoryButton;
     private Button resetFiltersButton;
-    private TextView textView1, textView2, textView3, textView4;
+    private TextView notificationTextView, longNotificationTextView, unreadOnTextView, unreadOnAfterImageTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,146 +41,96 @@ public class NotificationFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_notification, container, false);
-        button1 = view.findViewById(R.id.button_inbox_notification);
-        button2 = view.findViewById(R.id.button_Repository_notification);
+
+        inboxButton = view.findViewById(R.id.button_inbox_notification);
+        repositoryButton = view.findViewById(R.id.button_Repository_notification);
         resetFiltersButton = view.findViewById(R.id.btnResetFilters);
 
-        textView1 = view.findViewById(R.id.text_notification_after_image);
-        textView2 = view.findViewById(R.id.text_long_notification);
-        textView3 = view.findViewById(R.id.text_unread_on);
-        textView4 = view.findViewById(R.id.text_unread_on_after_image);
+        notificationTextView = view.findViewById(R.id.text_notification_after_image);
+        longNotificationTextView = view.findViewById(R.id.text_long_notification);
+        unreadOnTextView = view.findViewById(R.id.text_unread_on);
+        unreadOnAfterImageTextView = view.findViewById(R.id.text_unread_on_after_image);
 
-        // Reset Filters Button action
-        resetFiltersButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetAllFilters();
-                Toast.makeText(getActivity(), "Filters reset", Toast.LENGTH_SHORT).show(); // Toast added
-            }
+        // Set up button actions
+        resetFiltersButton.setOnClickListener(v -> {
+            resetAllFilters();
+            Toast.makeText(getActivity(), "Filters reset", Toast.LENGTH_SHORT).show();
         });
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                clickOpenBottomSheet();
-                Toast.makeText(getActivity(), "Inbox button clicked", Toast.LENGTH_SHORT).show(); // Toast added
-            }
-        });
+        inboxButton.setOnClickListener(v -> openInboxBottomSheet());
+        repositoryButton.setOnClickListener(v -> openRepositoryBottomSheet());
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                clickOpenBottomSheet2();
-                Toast.makeText(getActivity(), "Repository button clicked", Toast.LENGTH_SHORT).show(); // Toast added
-            }
-        });
-
-        ToggleButton toggleButton = view.findViewById(R.id.button_Unread_notification);
-        toggleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (toggleButton.isChecked()) {
-                    textView1.setVisibility(View.GONE);
-                    textView2.setVisibility(View.GONE);
-                    textView3.setVisibility(View.VISIBLE);
-                    textView4.setVisibility(View.VISIBLE);
-                    resetFiltersButton.setVisibility(View.VISIBLE);
-                    Toast.makeText(getActivity(), "Unread notifications enabled", Toast.LENGTH_SHORT).show(); // Toast added
-                } else {
-                    textView4.setVisibility(View.GONE);
-                    textView3.setVisibility(View.GONE);
-                    textView2.setVisibility(View.VISIBLE);
-                    textView1.setVisibility(View.VISIBLE);
-                    resetFiltersButton.setVisibility(View.GONE);
-                    resetAllFilters();
-                    Toast.makeText(getActivity(), "Unread notifications disabled", Toast.LENGTH_SHORT).show(); // Toast added
-                }
-            }
-        });
+        ToggleButton unreadToggleButton = view.findViewById(R.id.button_Unread_notification);
+        unreadToggleButton.setOnClickListener(v -> toggleUnreadNotifications(unreadToggleButton.isChecked()));
 
         return view;
     }
 
-    public void updateButtonText(String newText) {
-        button1.setText(newText);
+    private void updateButtonText(String newText) {
+        inboxButton.setText(newText);
     }
 
-    private void clickOpenBottomSheet() {
+    private void openInboxBottomSheet() {
         View bottomSheetView = getLayoutInflater().inflate(R.layout.layout_bottom_sheet, null);
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
+
         RadioGroup radioGroup = bottomSheetView.findViewById(R.id.radioGroup);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton radioButton = bottomSheetView.findViewById(checkedId);
-                String selectedText = radioButton.getText().toString();
-                updateButtonText(selectedText);
-                Toast.makeText(getActivity(), "Selected: " + selectedText, Toast.LENGTH_SHORT).show(); // Toast added
-            }
-        });
-        Button backButton = bottomSheetView.findViewById(R.id.backButton_bottom_sheet);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bottomSheetDialog.dismiss();
-            }
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            RadioButton radioButton = bottomSheetView.findViewById(checkedId);
+            updateButtonText(radioButton.getText().toString());
+            Toast.makeText(getActivity(), "Selected: " + radioButton.getText(), Toast.LENGTH_SHORT).show();
         });
 
+        bottomSheetView.findViewById(R.id.backButton_bottom_sheet).setOnClickListener(v -> bottomSheetDialog.dismiss());
     }
 
-    private void clickOpenBottomSheet2() {
+    private void openRepositoryBottomSheet() {
         View bottomSheetView2 = getLayoutInflater().inflate(R.layout.layout_bottom_sheet_2, null);
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         bottomSheetDialog.setContentView(bottomSheetView2);
         bottomSheetDialog.show();
-        Button backButton = bottomSheetView2.findViewById(R.id.backButton_bottom_sheet2);
-        Button searchButton = bottomSheetView2.findViewById(R.id.button_search_notification);
 
-        TextView textView1 = bottomSheetView2.findViewById(R.id.title_repoditory_notification);
-        TextView textView2 = bottomSheetView2.findViewById(R.id.edit_text_repository_notification);
+        bottomSheetView2.findViewById(R.id.backButton_bottom_sheet2).setOnClickListener(v -> bottomSheetDialog.dismiss());
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bottomSheetDialog.dismiss();
-            }
-        });
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textView1.setVisibility(View.GONE);
-                textView2.setVisibility(View.VISIBLE);
-                Toast.makeText(getActivity(), "Searching notifications...", Toast.LENGTH_SHORT).show(); // Toast added
-            }
+        bottomSheetView2.findViewById(R.id.button_search_notification).setOnClickListener(v -> {
+            TextView titleTextView = bottomSheetView2.findViewById(R.id.title_repoditory_notification);
+            TextView editText = bottomSheetView2.findViewById(R.id.edit_text_repository_notification);
+            titleTextView.setVisibility(View.GONE);
+            editText.setVisibility(View.VISIBLE);
+            Toast.makeText(getActivity(), "Searching notifications...", Toast.LENGTH_SHORT).show();
         });
     }
 
-    private void resetAllFilters() {
-        // Ensure the view is not null before accessing its elements
-        if (getView() != null) {
-            TextView textViewAllCaughtUp = getView().findViewById(R.id.text_notification_after_image);
-            TextView textViewTakeABreak = getView().findViewById(R.id.text_long_notification);
-            TextView textViewNoNotifications = getView().findViewById(R.id.text_unread_on_after_image);
-            TextView textViewUseFewerFilters = getView().findViewById(R.id.text_unread_on);
-
-            // Reset all views to the original state
-            textViewAllCaughtUp.setVisibility(View.VISIBLE);
-            textViewTakeABreak.setVisibility(View.VISIBLE);
-            textViewNoNotifications.setVisibility(View.GONE);
-            textViewUseFewerFilters.setVisibility(View.GONE);
-
-            // Hide the reset filters button again
+    private void toggleUnreadNotifications(boolean isChecked) {
+        if (isChecked) {
+            notificationTextView.setVisibility(View.GONE);
+            longNotificationTextView.setVisibility(View.GONE);
+            unreadOnTextView.setVisibility(View.VISIBLE);
+            unreadOnAfterImageTextView.setVisibility(View.VISIBLE);
+            resetFiltersButton.setVisibility(View.VISIBLE);
+            Toast.makeText(getActivity(), "Unread notifications enabled", Toast.LENGTH_SHORT).show();
+        } else {
+            unreadOnAfterImageTextView.setVisibility(View.GONE);
+            unreadOnTextView.setVisibility(View.GONE);
+            longNotificationTextView.setVisibility(View.VISIBLE);
+            notificationTextView.setVisibility(View.VISIBLE);
             resetFiltersButton.setVisibility(View.GONE);
-
-            // Reset the button text back to "Inbox"
-            updateButtonText("Inbox");
+            resetAllFilters();
+            Toast.makeText(getActivity(), "Unread notifications disabled", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void resetAllFilters() {
+        notificationTextView.setVisibility(View.VISIBLE);
+        longNotificationTextView.setVisibility(View.VISIBLE);
+        unreadOnAfterImageTextView.setVisibility(View.GONE);
+        unreadOnTextView.setVisibility(View.GONE);
+        resetFiltersButton.setVisibility(View.GONE);
+        updateButtonText("Inbox");
     }
 
     private void fetchNotifications() {
@@ -200,15 +149,10 @@ public class NotificationFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     List<Notification> notifications = response.body();
                     if (!notifications.isEmpty()) {
-                        textView1.setText(notifications.get(0).getReason());
-                        // Update UI with notification details
-                        for (Notification notification : notifications) {
-                            Log.d("NotificationFragment", "Notification ID: " + notification.getId());
-                        }
-                        // Show success notification
-                        Toast.makeText(getActivity(), "Notifications fetched successfully", Toast.LENGTH_SHORT).show();
+                        notificationTextView.setText(notifications.get(0).getReason());
+                        Log.d("NotificationFragment", "Notifications fetched successfully");
                     } else {
-                        textView1.setText("No notifications available.");
+                        notificationTextView.setText("No notifications available.");
                     }
                 } else {
                     Toast.makeText(getActivity(), "Failed to fetch notifications", Toast.LENGTH_SHORT).show();
